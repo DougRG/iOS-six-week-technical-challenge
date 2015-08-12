@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="51" id="qkY-mp-Q7o">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellID" rowHeight="51" id="qkY-mp-Q7o">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qkY-mp-Q7o" id="jqL-I0-XJH">
@@ -45,7 +45,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="r6q-MI-jrc">
                         <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="e5j-E5-JG0">
+                        <barButtonItem key="leftBarButtonItem" id="e5j-E5-JG0">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" id="jrn-7o-Hgu">
                                 <rect key="frame" x="180" y="7" width="240" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -58,6 +58,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <color key="tintColor" red="0.20000000000000001" green="0.58823529409999997" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="hmA-nG-riB">
                             <color key="tintColor" red="0.44705882352941179" green="1" blue="0.40784313725490196" alpha="1" colorSpace="calibratedRGB"/>
@@ -114,18 +115,28 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yIW-HV-4aZ">
+                                <rect key="frame" x="298" y="535" width="37" height="30"/>
+                                <state key="normal" title="Clear">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="clearButtonTapped:" destination="17s-Jp-8op" eventType="touchUpInside" id="Mfy-NH-qEY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="pJQ-qK-3as" firstAttribute="leading" secondItem="dqM-Tw-l21" secondAttribute="trailing" constant="26" id="0CO-oF-tEc"/>
+                            <constraint firstItem="yIW-HV-4aZ" firstAttribute="leading" secondItem="hkD-hp-hIa" secondAttribute="leading" constant="298" id="5zY-OV-uPG"/>
                             <constraint firstItem="fpt-vr-vWA" firstAttribute="leading" secondItem="g7d-zh-jyj" secondAttribute="trailing" constant="32" id="BEK-DT-j0x"/>
                             <constraint firstItem="g7d-zh-jyj" firstAttribute="leading" secondItem="hkD-hp-hIa" secondAttribute="leadingMargin" constant="91" id="JST-uR-iuG"/>
                             <constraint firstItem="g7d-zh-jyj" firstAttribute="top" secondItem="7Rn-Fu-SIE" secondAttribute="bottom" constant="42" id="Rri-K9-6PX"/>
                             <constraint firstItem="gPQ-3Z-0tj" firstAttribute="top" secondItem="dqM-Tw-l21" secondAttribute="bottom" constant="395" id="Vul-Vj-M6w"/>
                             <constraint firstItem="dqM-Tw-l21" firstAttribute="top" secondItem="g7d-zh-jyj" secondAttribute="bottom" constant="57" id="WwU-nW-DPP"/>
                             <constraint firstItem="pJQ-qK-3as" firstAttribute="top" secondItem="fpt-vr-vWA" secondAttribute="bottom" constant="52" id="ZaL-5o-LM4"/>
+                            <constraint firstItem="yIW-HV-4aZ" firstAttribute="top" secondItem="pJQ-qK-3as" secondAttribute="bottom" constant="17" id="hSx-t1-I2u"/>
                             <constraint firstItem="dqM-Tw-l21" firstAttribute="top" secondItem="pJQ-qK-3as" secondAttribute="top" id="ini-vY-JVy"/>
                             <constraint firstItem="dqM-Tw-l21" firstAttribute="centerX" secondItem="g7d-zh-jyj" secondAttribute="centerX" id="o9H-Nw-foV"/>
                             <constraint firstItem="fpt-vr-vWA" firstAttribute="top" secondItem="7Rn-Fu-SIE" secondAttribute="bottom" constant="38" id="otH-er-TPb"/>
@@ -136,6 +147,9 @@
                     <navigationItem key="navigationItem" id="ZyW-io-S8A">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="hnl-nb-65G">
                             <color key="tintColor" red="0.44705882349999998" green="1" blue="0.40784313729999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="17s-Jp-8op" id="rJF-un-pAi"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -146,24 +160,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FKM-d1-xaN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1621" y="177"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="7I1-bM-2fR">
-            <objects>
-                <viewController id="vuX-0X-yE3" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Gw3-Aa-KaE"/>
-                        <viewControllerLayoutGuide type="bottom" id="3cs-rY-Lco"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="hnm-mr-9C0">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Mcm-wH-WQv" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1621" y="876"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="emZ-iu-C3Z">

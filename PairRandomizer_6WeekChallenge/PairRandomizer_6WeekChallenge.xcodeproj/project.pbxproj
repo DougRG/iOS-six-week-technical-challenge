@@ -17,6 +17,7 @@
 		8C757F681B7BA3970023124F /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C757F671B7BA3970023124F /* DetailViewController.m */; };
 		8C757F6B1B7BAEE80023124F /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C757F6A1B7BAEE80023124F /* Person.m */; };
 		8C757F6E1B7BB1880023124F /* PersonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C757F6D1B7BB1880023124F /* PersonController.m */; };
+		8C757F711B7BC0F70023124F /* ListViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C757F701B7BC0F70023124F /* ListViewDataSource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,8 @@
 		8C757F6A1B7BAEE80023124F /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		8C757F6C1B7BB1880023124F /* PersonController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonController.h; sourceTree = "<group>"; };
 		8C757F6D1B7BB1880023124F /* PersonController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonController.m; sourceTree = "<group>"; };
+		8C757F6F1B7BC0F70023124F /* ListViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListViewDataSource.h; path = ../ListViewDataSource.h; sourceTree = "<group>"; };
+		8C757F701B7BC0F70023124F /* ListViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListViewDataSource.m; path = ../ListViewDataSource.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,11 +99,13 @@
 				8C757F481B7B98E00023124F /* MainViewController.m */,
 				8C757F691B7BAEE80023124F /* Person.h */,
 				8C757F6A1B7BAEE80023124F /* Person.m */,
-				8C757F4A1B7B98E00023124F /* Main.storyboard */,
 				8C757F6C1B7BB1880023124F /* PersonController.h */,
 				8C757F6D1B7BB1880023124F /* PersonController.m */,
 				8C757F661B7BA3970023124F /* DetailViewController.h */,
 				8C757F671B7BA3970023124F /* DetailViewController.m */,
+				8C757F6F1B7BC0F70023124F /* ListViewDataSource.h */,
+				8C757F701B7BC0F70023124F /* ListViewDataSource.m */,
+				8C757F4A1B7B98E00023124F /* Main.storyboard */,
 				8C757F4D1B7B98E00023124F /* Images.xcassets */,
 				8C757F4F1B7B98E00023124F /* LaunchScreen.xib */,
 				8C757F401B7B98E00023124F /* Supporting Files */,
@@ -239,6 +244,7 @@
 				8C757F6E1B7BB1880023124F /* PersonController.m in Sources */,
 				8C757F6B1B7BAEE80023124F /* Person.m in Sources */,
 				8C757F431B7B98E00023124F /* main.m in Sources */,
+				8C757F711B7BC0F70023124F /* ListViewDataSource.m in Sources */,
 				8C757F681B7BA3970023124F /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

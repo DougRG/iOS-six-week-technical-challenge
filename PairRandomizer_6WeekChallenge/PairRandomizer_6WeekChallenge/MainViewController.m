@@ -8,6 +8,7 @@
 
 #import "MainViewController.h"
 #import "DetailViewController.h"
+#import "PersonController.h"
 
 @interface MainViewController ()
 
@@ -38,8 +39,8 @@
         
         DetailViewController *viewController = segue.destinationViewController;
         
-//        Entry *entry =[EntryController sharedInstance].entries[indexPath.row];
-//        viewController.entry = entry;
+        Person *entry =[PersonController sharedInstance].people[indexPath.row];
+        viewController.personEntry = entry;
     }
 }
 
