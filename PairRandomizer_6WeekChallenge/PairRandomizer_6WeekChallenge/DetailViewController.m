@@ -21,7 +21,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-//    [self updateWithEntry:self.personEntry];
+  
+    
+//    Forgot this line for a while, so detail views were not loading properly.  
+    [self updateWithEntry:self.personEntry];
     
 }
 
@@ -41,6 +44,8 @@
     if (self.personEntry) {
         self.personEntry.name = self.nameTextField.text;
         self.personEntry.details = self.detailTextField.text;
+        
+        [self.navigationController popToRootViewControllerAnimated:YES];
     } else {
         Person *person = [Person new];
         person.name = self.nameTextField.text;
@@ -49,6 +54,8 @@
         
         [self.navigationController popToRootViewControllerAnimated:YES];
     }
+
+    
 }
 
 - (IBAction)clearButtonTapped:(id)sender {

@@ -29,10 +29,13 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.44705882349999998" green="1" blue="0.40784313729999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
-                                            <segue destination="17s-Jp-8op" kind="show" id="FWI-Mt-j8C"/>
+                                            <segue destination="17s-Jp-8op" kind="show" identifier="viewPerson" id="FWI-Mt-j8C"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="ef0-Wb-eG4" id="Y45-Zn-yHw"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -72,6 +75,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <customObject id="ef0-Wb-eG4" customClass="ListViewDataSource"/>
             </objects>
             <point key="canvasLocation" x="845" y="429"/>
         </scene>
@@ -88,34 +92,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What's their name?" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fpt-vr-vWA">
-                                <rect key="frame" x="184" y="102" width="275" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="275" id="f7r-dx-Mcz"/>
-                                </constraints>
+                                <rect key="frame" x="136" y="102" width="416" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Who?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g7d-zh-jyj">
-                                <rect key="frame" x="107" y="106" width="45" height="21"/>
+                                <rect key="frame" x="61" y="106" width="45" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.44705882349999998" green="1" blue="0.40784313729999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dqM-Tw-l21">
-                                <rect key="frame" x="104" y="184" width="50" height="21"/>
+                                <rect key="frame" x="61" y="184" width="50" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.44705882349999998" green="1" blue="0.40784313729999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" text="Tell me about them..." translatesAutoresizingMaskIntoConstraints="NO" id="pJQ-qK-3as">
-                                <rect key="frame" x="180" y="184" width="284" height="334"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="284" id="V7I-ym-kW0"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yIW-HV-4aZ">
                                 <rect key="frame" x="298" y="535" width="37" height="30"/>
                                 <state key="normal" title="Clear">
@@ -125,23 +117,31 @@
                                     <action selector="clearButtonTapped:" destination="17s-Jp-8op" eventType="touchUpInside" id="Mfy-NH-qEY"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="pJQ-qK-3as">
+                                <rect key="frame" x="136" y="184" width="416" height="334"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="pJQ-qK-3as" firstAttribute="leading" secondItem="dqM-Tw-l21" secondAttribute="trailing" constant="26" id="0CO-oF-tEc"/>
-                            <constraint firstItem="yIW-HV-4aZ" firstAttribute="leading" secondItem="hkD-hp-hIa" secondAttribute="leading" constant="298" id="5zY-OV-uPG"/>
-                            <constraint firstItem="fpt-vr-vWA" firstAttribute="leading" secondItem="g7d-zh-jyj" secondAttribute="trailing" constant="32" id="BEK-DT-j0x"/>
-                            <constraint firstItem="g7d-zh-jyj" firstAttribute="leading" secondItem="hkD-hp-hIa" secondAttribute="leadingMargin" constant="91" id="JST-uR-iuG"/>
-                            <constraint firstItem="g7d-zh-jyj" firstAttribute="top" secondItem="7Rn-Fu-SIE" secondAttribute="bottom" constant="42" id="Rri-K9-6PX"/>
-                            <constraint firstItem="gPQ-3Z-0tj" firstAttribute="top" secondItem="dqM-Tw-l21" secondAttribute="bottom" constant="395" id="Vul-Vj-M6w"/>
-                            <constraint firstItem="dqM-Tw-l21" firstAttribute="top" secondItem="g7d-zh-jyj" secondAttribute="bottom" constant="57" id="WwU-nW-DPP"/>
-                            <constraint firstItem="pJQ-qK-3as" firstAttribute="top" secondItem="fpt-vr-vWA" secondAttribute="bottom" constant="52" id="ZaL-5o-LM4"/>
-                            <constraint firstItem="yIW-HV-4aZ" firstAttribute="top" secondItem="pJQ-qK-3as" secondAttribute="bottom" constant="17" id="hSx-t1-I2u"/>
-                            <constraint firstItem="dqM-Tw-l21" firstAttribute="top" secondItem="pJQ-qK-3as" secondAttribute="top" id="ini-vY-JVy"/>
-                            <constraint firstItem="dqM-Tw-l21" firstAttribute="centerX" secondItem="g7d-zh-jyj" secondAttribute="centerX" id="o9H-Nw-foV"/>
-                            <constraint firstItem="fpt-vr-vWA" firstAttribute="top" secondItem="7Rn-Fu-SIE" secondAttribute="bottom" constant="38" id="otH-er-TPb"/>
-                            <constraint firstItem="gPQ-3Z-0tj" firstAttribute="top" secondItem="pJQ-qK-3as" secondAttribute="bottom" constant="82" id="pEf-AW-6i4"/>
-                            <constraint firstItem="dqM-Tw-l21" firstAttribute="leading" secondItem="hkD-hp-hIa" secondAttribute="leadingMargin" constant="88" id="w74-3e-ABD"/>
+                            <constraint firstItem="g7d-zh-jyj" firstAttribute="leading" secondItem="dqM-Tw-l21" secondAttribute="leading" id="49u-gT-5a2"/>
+                            <constraint firstItem="pJQ-qK-3as" firstAttribute="top" secondItem="fpt-vr-vWA" secondAttribute="bottom" constant="52" id="4X3-FK-Kfd"/>
+                            <constraint firstItem="gPQ-3Z-0tj" firstAttribute="top" secondItem="yIW-HV-4aZ" secondAttribute="bottom" constant="35" id="5Z0-Rv-IRT"/>
+                            <constraint firstItem="gPQ-3Z-0tj" firstAttribute="top" secondItem="dqM-Tw-l21" secondAttribute="bottom" constant="395" id="JbH-ZE-XhP"/>
+                            <constraint firstItem="yIW-HV-4aZ" firstAttribute="leading" secondItem="hkD-hp-hIa" secondAttribute="leading" constant="298" id="TrM-QN-1z3"/>
+                            <constraint firstItem="dqM-Tw-l21" firstAttribute="top" secondItem="pJQ-qK-3as" secondAttribute="top" id="Uif-Aj-JJA"/>
+                            <constraint firstItem="g7d-zh-jyj" firstAttribute="leading" secondItem="hkD-hp-hIa" secondAttribute="leadingMargin" constant="45" id="Vg1-Tu-fg3"/>
+                            <constraint firstItem="g7d-zh-jyj" firstAttribute="top" secondItem="7Rn-Fu-SIE" secondAttribute="bottom" constant="42" id="W0Z-EK-QAb"/>
+                            <constraint firstItem="fpt-vr-vWA" firstAttribute="top" secondItem="7Rn-Fu-SIE" secondAttribute="bottom" constant="38" id="gdu-5n-pdW"/>
+                            <constraint firstItem="fpt-vr-vWA" firstAttribute="leading" secondItem="pJQ-qK-3as" secondAttribute="leading" id="grK-jC-1RD"/>
+                            <constraint firstItem="pJQ-qK-3as" firstAttribute="leading" secondItem="dqM-Tw-l21" secondAttribute="trailing" constant="25" id="lz1-aS-3KM"/>
+                            <constraint firstItem="fpt-vr-vWA" firstAttribute="leading" secondItem="g7d-zh-jyj" secondAttribute="trailing" constant="30" id="ngq-ra-s0m"/>
+                            <constraint firstItem="dqM-Tw-l21" firstAttribute="top" secondItem="g7d-zh-jyj" secondAttribute="bottom" constant="57" id="tD6-Oe-TO9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fpt-vr-vWA" secondAttribute="trailing" constant="32" id="vQI-2T-UP6"/>
+                            <constraint firstItem="fpt-vr-vWA" firstAttribute="trailing" secondItem="pJQ-qK-3as" secondAttribute="trailing" id="xh8-Vv-NGw"/>
+                            <constraint firstItem="yIW-HV-4aZ" firstAttribute="top" secondItem="pJQ-qK-3as" secondAttribute="bottom" constant="17" id="yRf-P9-YUd"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ZyW-io-S8A">
@@ -182,6 +182,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="FWI-Mt-j8C"/>
+        <segue reference="n20-eQ-xyC"/>
     </inferredMetricsTieBreakers>
 </document>

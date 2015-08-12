@@ -23,6 +23,11 @@ static NSString *allEntriesKey = @"allEntriesKey";
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedInstance = [PersonController new];
+        
+        
+        
+//        cells were not populating until this line was present.  Gentle Nudge right here.
+        [sharedInstance loadFromPersistentStorage];
     });
     
     return sharedInstance;
@@ -35,6 +40,8 @@ static NSString *allEntriesKey = @"allEntriesKey";
     [addMutablePerson addObject:personEntry];
     
     self.people = addMutablePerson;
+    
+    [self saveToPersistentStorage];
 }
 
 - (void)removeEntry:(Person *)personEntry {
@@ -60,11 +67,11 @@ static NSString *allEntriesKey = @"allEntriesKey";
 }
 
 - (void)loadFromPersistentStorage {
-    NSArray *entryDictionaries = [[NSUserDefaults standardUserDefaults] objectForKey:allEntriesKey];
+    NSArray *personDictionaries = [[NSUserDefaults standardUserDefaults] objectForKey:allEntriesKey];
     
     NSMutableArray *entries = [NSMutableArray new];
     
-    for (NSDictionary *entry in entryDictionaries) {
+    for (NSDictionary *entry in personDictionaries) {
         [entries addObject:[[Person alloc] initWithDictionary:entry]];
     }
     

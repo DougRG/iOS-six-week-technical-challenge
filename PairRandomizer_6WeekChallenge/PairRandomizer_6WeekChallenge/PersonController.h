@@ -17,11 +17,11 @@
 
 - (void)addEntry:(Person *)personEntry;
 
+- (void)save;
+
 - (void)removeEntry:(Person *)personEntry;
 
 - (void)saveToPersistentStorage;
-
-- (void)save;
 
 - (void)loadFromPersistentStorage;
 

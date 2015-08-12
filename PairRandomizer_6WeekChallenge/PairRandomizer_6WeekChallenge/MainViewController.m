@@ -9,9 +9,12 @@
 #import "MainViewController.h"
 #import "DetailViewController.h"
 #import "PersonController.h"
+#import "ListViewDataSource.h"
+
 
 @interface MainViewController ()
 
+//@property (strong, nonatomic) ListViewDataSource *dataSource;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
@@ -21,6 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+//    self.tableView.dataSource = self.dataSource;
 }
 
 - (void)didReceiveMemoryWarning {
