@@ -20,4 +20,4 @@ Take as much time as needed to complete the challenge. Add a note at the bottom 
 
 Example:
 
-```Completed in 2.5 hours.```
+```Completed in 15 hours.  No, you're not reading that wrong.```
