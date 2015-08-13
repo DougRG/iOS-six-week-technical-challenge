@@ -7,6 +7,7 @@
 //
 
 #import "ListViewDataSource.h"
+#import "PersonController.h"
 
 @implementation ListViewDataSource
 
@@ -27,6 +28,31 @@
     return cell;
 
 }
+
+//- (NSArray *)randomizer:(NSArray *)entryArray {
+//    
+//    NSMutableArray *mutableArray = [NSMutableArray new];
+//    mutableArray = [[PersonController sharedInstance]people];
+//    
+//    NSUInteger count = [mutableArray count];
+//   
+//    if (count > 1) {
+//        for (NSUInteger i = count - 1; i > 0; --i) {
+//            [mutableArray exchangeObjectAtIndex:i withObjectAtIndex:arc4random_uniform((int32_t)(i + 1))];
+//        }
+//    }
+//    
+//    NSArray *randomArray = [NSArray arrayWithArray:mutableArray];
+//    NSLog(@"%@", randomArray);
+//
+//    return randomArray;
+//        
+//    
+//
+//}
+
+
+
 
 
 

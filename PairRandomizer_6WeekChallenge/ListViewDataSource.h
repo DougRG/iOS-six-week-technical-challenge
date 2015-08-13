@@ -12,4 +12,6 @@
 
 @interface ListViewDataSource : NSObject <UITableViewDataSource>
 
+- (NSArray *)randomizer:(NSArray *)entryArray;
+
 @end

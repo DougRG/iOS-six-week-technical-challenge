@@ -12,7 +12,7 @@ static NSString *allEntriesKey = @"allEntriesKey";
 
 @interface PersonController ()
 
-@property (strong, nonatomic) NSArray *people;
+@property (strong, nonatomic) NSMutableArray *people;
 
 @end
 

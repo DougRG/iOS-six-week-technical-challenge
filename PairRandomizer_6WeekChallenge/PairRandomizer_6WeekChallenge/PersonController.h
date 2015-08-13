@@ -11,7 +11,7 @@
 
 @interface PersonController : NSObject
 
-@property (strong, nonatomic, readonly) NSArray *people;
+@property (strong, nonatomic, readonly) NSMutableArray *people;
 
 + (PersonController *)sharedInstance;
 
