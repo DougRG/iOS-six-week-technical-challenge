@@ -79,15 +79,17 @@
     }
     
     NSArray *randomArray = [NSArray arrayWithArray:mutableArray];
+    
     NSLog(@"%@", randomArray);
     
     
     [self.tableView reloadData];
     
     return randomArray;
-    
-    
+
 }
+
+
 
 
 @end

@@ -13,7 +13,9 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return [[PersonController sharedInstance]people].count;
+//    return [[PersonController sharedInstance]people].count;
+
+    return 2;
     
 }
 
@@ -21,39 +23,58 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellID"];
     
-    Person *person = [[PersonController sharedInstance]people][indexPath.row];
+//    NSInteger absoluteRow = indexPath.row;
+//    
+//    for (int section = 0; section < indexPath.section; ++section) {
+//        
+//        absoluteRow += [tableView numberOfRowsInSection:section];
+//    }
+    
+    
+    
+    NSLog(@"Row: %ld", (long)indexPath.row);
+    
+    NSLog(@"Section: %ld\n", (long)indexPath.section);
+    
+
+    Person *person = [[PersonController sharedInstance]people][indexPath.section * 2 + indexPath.row];
     
     cell.textLabel.text = person.name;
     
     return cell;
-
 }
 
-//- (NSArray *)randomizer:(NSArray *)entryArray {
-//    
-//    NSMutableArray *mutableArray = [NSMutableArray new];
-//    mutableArray = [[PersonController sharedInstance]people];
-//    
-//    NSUInteger count = [mutableArray count];
-//   
-//    if (count > 1) {
-//        for (NSUInteger i = count - 1; i > 0; --i) {
-//            [mutableArray exchangeObjectAtIndex:i withObjectAtIndex:arc4random_uniform((int32_t)(i + 1))];
-//        }
-//    }
-//    
-//    NSArray *randomArray = [NSArray arrayWithArray:mutableArray];
-//    NSLog(@"%@", randomArray);
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        
+        [[PersonController sharedInstance] removeEntry:[PersonController sharedInstance].people[indexPath.row]];
+        
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
+        [[PersonController sharedInstance] saveToPersistentStorage];
+        
+    }
+    
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    
+    NSInteger count = [PersonController sharedInstance].people.count / 2;
+    
+    return count;
+}
+
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+
+    return [NSString stringWithFormat:@"Pair %ld", (long)section +1];
+    
+}
+
 //
-//    return randomArray;
-//        
-//    
+//    return [NSString@"Pair @ld", section];
 //
 //}
-
-
-
-
-
 
 @end

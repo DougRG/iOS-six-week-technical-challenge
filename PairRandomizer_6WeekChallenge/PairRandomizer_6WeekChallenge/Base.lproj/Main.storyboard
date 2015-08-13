@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="51" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="JRd-71-tKP">
-                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellID" rowHeight="51" id="qkY-mp-Q7o">
@@ -40,10 +40,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="JRd-71-tKP" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="7v3-aa-6bR"/>
-                            <constraint firstItem="JRd-71-tKP" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="FuE-4k-XJV"/>
-                            <constraint firstAttribute="trailing" secondItem="JRd-71-tKP" secondAttribute="trailing" id="orS-ev-HWI"/>
-                            <constraint firstItem="JRd-71-tKP" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="yeM-bt-jHh"/>
+                            <constraint firstAttribute="trailing" secondItem="JRd-71-tKP" secondAttribute="trailing" id="YNd-zj-YyT"/>
+                            <constraint firstItem="JRd-71-tKP" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="npl-Te-t1T"/>
+                            <constraint firstItem="JRd-71-tKP" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="sVh-R1-MrJ"/>
+                            <constraint firstItem="JRd-71-tKP" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="wNG-lU-Eop"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="r6q-MI-jrc">
